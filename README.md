@@ -1,7 +1,3 @@
-Here's an improved and well-structured README for both the **frontend** and **backend** repositories of your **Anonymous Student Feedback System** project. Let me know if you want any modifications!  
-
----
-
 ## **Anonymous Student Feedback System**  
 
 ### **Overview**  
