@@ -30,7 +30,7 @@ function AccessFeedbacks({ facultyName }) {
     useEffect(() => {
         const fetchProcessedFeedback = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/feedback/${facultyName}`);
+                const response = await axios.get(`https://feedback-system-server-nzt4.onrender.com/feedback/${facultyName}`);
                 setProcessedFeedback(response.data);
             } catch (error) {
                 console.error('Error fetching processed feedback:', error);
@@ -43,7 +43,7 @@ function AccessFeedbacks({ facultyName }) {
     useEffect(() => {
         const fetchQuestions = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/feedback/fetchQuestions');
+                const response = await axios.get('https://feedback-system-server-nzt4.onrender.com/feedback/fetchQuestions');
                 setQuestions(response.data);
             } catch (error) {
                 console.error('Error fetching questions:', error);

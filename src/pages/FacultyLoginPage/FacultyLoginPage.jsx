@@ -16,7 +16,7 @@ const FacultyLoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/faculty/authenticateFaculty', { username, password });
+      const response = await axios.post('https://feedback-system-server-nzt4.onrender.com/faculty/authenticateFaculty', { username, password });
       navigate(`/faculty-dashboard/${username}`);
     } catch (error) {
       setError(true);

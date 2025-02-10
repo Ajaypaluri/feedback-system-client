@@ -28,7 +28,7 @@ function FeedbackForm({ courses, labs, faculties, questions, studentID }) {
 
 
          try {
-            const response = await axios.get(`http://localhost:5000/feedback/isFeedbackSubmitted/${studentID}`);
+            const response = await axios.get(`https://feedback-system-server-nzt4.onrender.com/feedback/isFeedbackSubmitted/${studentID}`);
             setIsAlreadySubmitted(response.data);
             console.log("checkFeedbackSUbmission called");
             console.log(response.data);
@@ -113,7 +113,7 @@ function FeedbackForm({ courses, labs, faculties, questions, studentID }) {
 
          console.log(feedbackData);
          // Send data to backend
-         const response = await axios.post('http://localhost:5000/feedback/submitFeedback', feedbackData);
+         const response = await axios.post('https://feedback-system-server-nzt4.onrender.com/feedback/submitFeedback', feedbackData);
 
          // Handle success response
          console.log('Feedback submitted successfully:', response.data);

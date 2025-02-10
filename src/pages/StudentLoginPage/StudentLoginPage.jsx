@@ -12,7 +12,7 @@ const StudentLoginPage = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:5000/student/validateRollNumber', {
+      const response = await fetch('https://feedback-system-server-nzt4.onrender.com/student/validateRollNumber', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

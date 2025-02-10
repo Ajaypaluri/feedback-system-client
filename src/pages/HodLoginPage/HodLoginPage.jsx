@@ -16,7 +16,7 @@ const HodLoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/hod/authenticateHod', { username, password });
+      const response = await axios.post('https://feedback-system-server-nzt4.onrender.com/hod/authenticateHod', { username, password });
       navigate(`/hod-dashboard/${username}`);
     } catch (error) {
       setError(true);

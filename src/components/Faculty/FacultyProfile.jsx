@@ -19,7 +19,7 @@ const FacultyProfile = ({ facultyName }) => {
   const fetchProfile = async () => {
 
     try {
-      const response = await axios.get(`http://localhost:5000/faculty/${facultyName}`);
+      const response = await axios.get(`https://feedback-system-server-nzt4.onrender.com/faculty/${facultyName}`);
       const { Department, CoursesAssigned } = response.data;
       setProfile({ Department, CoursesAssigned });
       setError('');
@@ -41,7 +41,7 @@ const FacultyProfile = ({ facultyName }) => {
 
     // Make a request to backend to verify old password and update new password
     try {
-      const response = await fetch('http://localhost:5000/faculty/changePassword', {
+      const response = await fetch('https://feedback-system-server-nzt4.onrender.com/faculty/changePassword', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

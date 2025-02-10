@@ -12,7 +12,7 @@ const AdminLogin = () => {
   const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/admin/login', {
+      const response = await fetch('https://feedback-system-server-nzt4.onrender.com/admin/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

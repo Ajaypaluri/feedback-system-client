@@ -33,7 +33,7 @@ function FacultyWiseFeedbacks({ username }) {
 
     const fetchFacultyList = async () => {
         try {
-            const response = await axios.post('http://localhost:5000/hod/fetchFacultyList', { username });
+            const response = await axios.post('https://feedback-system-server-nzt4.onrender.com/hod/fetchFacultyList', { username });
             setFacultyList(response.data);
         } catch (error) {
             console.error('Error fetching faculty list:', error);
@@ -47,7 +47,7 @@ function FacultyWiseFeedbacks({ username }) {
     const fetchProcessedFeedback = async () => { // Removed facultyName parameter as it's not used
         try {
             if (selectedFaculty) {
-                const response = await axios.get(`http://localhost:5000/feedback/${selectedFaculty}`);
+                const response = await axios.get(`https://feedback-system-server-nzt4.onrender.com/feedback/${selectedFaculty}`);
                 setProcessedFeedback(response.data);
             } else {
                 setProcessedFeedback([]); // Reset processedFeedback if no faculty is selected
@@ -68,7 +68,7 @@ function FacultyWiseFeedbacks({ username }) {
     useEffect(() => {
         const fetchQuestions = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/feedback/fetchQuestions');
+                const response = await axios.get('https://feedback-system-server-nzt4.onrender.com/feedback/fetchQuestions');
                 setQuestions(response.data);
             } catch (error) {
                 console.error('Error fetching questions:', error);

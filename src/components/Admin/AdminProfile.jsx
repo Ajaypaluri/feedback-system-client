@@ -19,7 +19,7 @@ const AdminProfile = () => {
 
         // Make a request to backend to verify old password and update new password
         try {
-            const response = await fetch('http://localhost:5000/admin/changePassword', {
+            const response = await fetch('https://feedback-system-server-nzt4.onrender.com/admin/changePassword', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -48,7 +48,7 @@ const AdminProfile = () => {
         const confirmDelete = window.confirm("Are you sure you want to delete all data?");
         if (confirmDelete) {
           try {
-            const response = await axios.post(`http://localhost:5000/admin/deleteAllData`);
+            const response = await axios.post(`https://feedback-system-server-nzt4.onrender.com/admin/deleteAllData`);
             alert(response.data.message);
           } catch (error) {
             console.error('Error deleting data:', error);

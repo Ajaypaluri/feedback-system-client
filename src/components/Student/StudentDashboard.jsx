@@ -50,7 +50,7 @@ const StudentDashboard = () => {
     // Fetch questions from the backend when the component mounts
     const fetchQuestions = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/feedback/fetchQuestions');
+        const response = await axios.get('https://feedback-system-server-nzt4.onrender.com/feedback/fetchQuestions');
         setQuestions(response.data);
       } catch (error) {
         console.error('Error fetching questions:', error);
@@ -66,28 +66,28 @@ const StudentDashboard = () => {
     const fetchCourses = async () => {
       try {
         // Fetch student details to get semester and department
-        const studentResponse = await axios.get(`http://localhost:5000/student/${rollNumber}`);
+        const studentResponse = await axios.get(`https://feedback-system-server-nzt4.onrender.com/student/${rollNumber}`);
         console.log(studentResponse.data);
         const { semester, department } = studentResponse.data;
 
         // Fetch access status from the server
-        const accessResponse = await axios.get(`http://localhost:5000/hod/getAccess/${department}`);
+        const accessResponse = await axios.get(`https://feedback-system-server-nzt4.onrender.com/hod/getAccess/${department}`);
         setHasAccess(accessResponse.data.hasAccess);
 
         // Fetch courses based on semester and department
-        const coursesResponse = await axios.get(`http://localhost:5000/course/${semester}/${department}/courses`);
+        const coursesResponse = await axios.get(`https://feedback-system-server-nzt4.onrender.com/course/${semester}/${department}/courses`);
         console.log(coursesResponse.data);
         const tempCourses = [];
         tempCourses.push(coursesResponse.data);
         setCourses(coursesResponse.data);
 
         // Fetch labs based on semester and department
-        const labsResponse = await axios.get(`http://localhost:5000/course/${semester}/${department}/labs`);
+        const labsResponse = await axios.get(`https://feedback-system-server-nzt4.onrender.com/course/${semester}/${department}/labs`);
         console.log(labsResponse.data);
         tempCourses.push(labsResponse.data);
         setLabs(labsResponse.data);
 
-        const facultyResponse = await axios.get(`http://localhost:5000/faculty/${department}/${tempCourses.join(',')}`);
+        const facultyResponse = await axios.get(`https://feedback-system-server-nzt4.onrender.com/faculty/${department}/${tempCourses.join(',')}`);
         console.log(facultyResponse.data);
         const tempFaculty = facultyResponse.data.map(faculty => ({
           name: faculty.name,

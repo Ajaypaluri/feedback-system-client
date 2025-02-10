@@ -23,7 +23,7 @@ const HodProfile = ({ hodName }) => {
 
   const fetchProfile = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/hod/${hodName}`);
+      const response = await axios.get(`https://feedback-system-server-nzt4.onrender.com/hod/${hodName}`);
       const { Department } = response.data;
       setProfile({ Department });
       setAccessGiven(response.data.AccessGiven);
@@ -45,7 +45,7 @@ const HodProfile = ({ hodName }) => {
 
     // Make a request to backend to verify old password and update new password
     try {
-      const response = await fetch('http://localhost:5000/hod/changePassword', {
+      const response = await fetch('https://feedback-system-server-nzt4.onrender.com/hod/changePassword', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -74,7 +74,7 @@ const HodProfile = ({ hodName }) => {
     try {
       setFeedbackProcessing(true);
       setLoadingMessage("Processing feedback... It may take a while... Do Not Refresh or Close the window...");
-      const response = await axios.get(`http://localhost:5000/feedback/processFeedback`);
+      const response = await axios.get(`https://feedback-system-server-nzt4.onrender.com/feedback/processFeedback`);
       alert(response.data.message); // Alert message on success
       setFeedbackProcessing(false);
       setLoadingMessage("");
@@ -89,7 +89,7 @@ const HodProfile = ({ hodName }) => {
   const toggleAccess = async () => {
     setLoadingMessage("Updating access..."); // Show loading message while updating
     try {
-      const response = await axios.post(`http://localhost:5000/hod/toggleAccess`, { hodName });
+      const response = await axios.post(`https://feedback-system-server-nzt4.onrender.com/hod/toggleAccess`, { hodName });
       setAccessGiven(response.data.accessGiven); // Update accessGiven from server response
       setLoadingMessage("");
     } catch (error) {
