@@ -160,8 +160,8 @@ Go to: **`http://localhost:3000`**
 ---
 
 ### **📌 Notes:**  
-- **Frontend Deployed URL:** [https://feedback-system-client.vercel.app](https://feedback-system-client.vercel.app)  
-- **Backend Deployed URL:** [https://feedback-system-server.onrender.com](https://feedback-system-server.onrender.com)  
+- **Frontend Deployed URL:** [https://client-ajaypaluri-ajays-projects-b96f1c0e.vercel.app/](https://client-ajaypaluri-ajays-projects-b96f1c0e.vercel.app/)  
+- **Backend Deployed URL:** [https://feedback-system-server-nzt4.onrender.com](https://feedback-system-server-nzt4.onrender.com)  
 
 ---
 
